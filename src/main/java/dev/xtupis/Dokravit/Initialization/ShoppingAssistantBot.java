@@ -14,7 +14,7 @@ public class ShoppingAssistantBot extends TelegramLongPollingBot {
 
     @Override
     public String getBotToken() {
-        return "8053237627:AAHl7anm2lJi-93vy7ZnAgcZW-GLvvSsbpQ";
+        return "YOUR_TOKEN";
     }
 
     @Override
