@@ -38,14 +38,13 @@ public class ShoppingAssistantBot extends TelegramLongPollingBot {
 
                 sendMessage(chatId, "🔍 Ищу товары по запросу: " + query + "...");
 
-
                 List<String> results = YandexMarketParser.searchYandexMarket(query);
 
                 if (results.isEmpty() || results.stream().allMatch(String::isBlank)) {
                     sendMessage(chatId, "😕 Не удалось найти товары по запросу: " + query);
                 } else {
                     String response = String.join("\n\n", results);
-                    sendMessage(chatId, response);
+                    sendLongMessage(chatId, response);
                 }
             }
         }
@@ -61,4 +60,14 @@ public class ShoppingAssistantBot extends TelegramLongPollingBot {
             e.printStackTrace();
         }
     }
+
+    private void sendLongMessage(long chatId, String fullText) {
+        int maxLength = 4096;
+        for (int start = 0; start < fullText.length(); start += maxLength) {
+            int end = Math.min(start + maxLength, fullText.length());
+            String part = fullText.substring(start, end);
+            sendMessage(chatId, part);
+        }
+    }
+
 }
