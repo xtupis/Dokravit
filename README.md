@@ -1,12 +1,16 @@
+[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/xtupis/Dokravit/blob/master/LICENSE)
 ## Бот Докравит
 
 Докравит - ваш шоппинг-ассистент, предназначенный для сортировки товаров в выбранном магазине.
 На данный момент бот не обладает обширным функционалом в силу ранней стадии разработки.
+В данный момет поиск по товарам с Яндекс Маркета.
 
 ## Чек-лист
 
 - [X] Работа с Telegram
-- [ ] Парсинг страниц Ozon, WB и так далее
+- [x] Парсинг Яндекс Маркет
+- [ ] Парсинг Ozon
+-  [ ] Парсинг Wildberries
 - [ ] Поиск самого дешевого и дорого товара
 - [ ] Другие критерии сортировки
 
@@ -20,6 +24,7 @@
 * [Kotlin](https://kotlinlang.org/) - вспомогательный язык, используемый в build.gradle.
 * [TelegramBots](https://github.com/rubenlagus/TelegramBots) - Библиотека для работы с ботами в Telegram.
 * [Gradle](https://gradle.org/) - Сборщик проектов.
+* [Playwright](https://playwright.dev/) - Парсинг сайтов и тестирование веб приложений
 
 ## Помощь в разработе
 
